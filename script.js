@@ -1,6 +1,6 @@
 const words = ['Страна', 'Язык', 'Люди', 'Говорят', 'Мужчина', 'Женщина'];
 const countries = ['Ukraine', 'Italy', 'Germany', 'Russia', 'Korea', 'France', 'USA', 'Japan', 'China']
-let wordsInterval = 1000;
+let wordsInterval = 3500;
 
 function init() {
     createSelectionList();
