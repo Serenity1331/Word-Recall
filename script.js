@@ -3,9 +3,10 @@ const countries = ['Ukraine', 'Italy', 'Germany', 'Russia', 'Korea', 'France', '
 let wordsInterval = 3500;
 
 function init() {
-    createSelectionList();
     gameStart(); // must be after createSelectionList
     displayAnswersListener();
+    chosenCountryListener();
+    collapsibleListener();
 }
 
 function gameStart() {
@@ -38,6 +39,17 @@ function gameStart() {
         }, wordsInterval * words.length + wordsInterval)
 
 
+    })
+}
+
+function chosenCountryListener() {
+
+    const countryNames = document.querySelectorAll('.countryName');
+    countryNames.forEach(elem => {
+
+        elem.addEventListener('click', function () {
+            this.classList.contains('chosen') ? this.classList.remove('chosen') : this.classList.add('chosen')
+        })
     })
 }
 
@@ -90,51 +102,13 @@ function startCountryTimer(from, to, arr) {
     }, wordsInterval * words.length + wordsInterval);
 }
 
-function createSelectionList() {
-
-    const countrySelection = document.querySelector('.countrySelection');
-    const fragment = document.createDocumentFragment();
-
-    for (let i = 0; i < countries.length; i++) {
-
-        const countryName = countries[i];
-        const countryElement = createLabelAndCheckbox(countryName);
-        fragment.appendChild(countryElement);
-
-    }
-
-    countrySelection.appendChild(fragment)
-
-}
-
-function createLabelAndCheckbox(value) {
-
-    let div = document.createElement('div')
-    div.classList.add('labelBox');
-
-    let label = document.createElement('label');
-    label.classList.add('countryName');
-    label.setAttribute('for', value);
-    label.textContent = value;
-
-    let input = document.createElement('input');
-    input.classList.add('countryCheckbox');
-    input.setAttribute('type', 'checkbox');
-    input.setAttribute('id', value);
-    input.checked = true;
-
-    div.appendChild(label);
-    div.appendChild(input);
-
-    return div
-}
-
 function getChosenCountries() {
 
     let arr = [];
-    let checkboxes = document.querySelectorAll('.countryCheckbox');
-    checkboxes.forEach(elem => elem.checked ? arr.push(elem.previousSibling.textContent) : 0)
-    return arr;
+    const chosen = document.querySelectorAll('.chosen');
+    chosen.forEach(elem => arr.push(elem.textContent))
+
+    return arr
 }
 
 function getAnswers() {
@@ -189,7 +163,7 @@ function getAnswers() {
             5: 'француженка',
         },
         {
-            0: 'США/Америка',
+            0: 'Америка',
             1: 'английский',
             2: 'американцы',
             3: 'по-английски',
@@ -242,22 +216,32 @@ function createTable() {
     return fragment;
 }
 
-function insertTableData() {
-
-    const data = createTable();
-    const table = document.querySelector('.answers__table');
-    table.appendChild(data);
-}
-
 function displayAnswersListener() {
-    const btn = document.querySelector('.answers__title');
+    const btn = document.querySelector('.showAnswers');
     btn.addEventListener('click', () => {
 
-        const table = document.querySelector('.answers__table');
-        table.style.opacity = 1;
+        const answers = document.querySelector('.answers__container');
+
+        answers.classList.toggle('visible');
+        btn.classList.toggle('active');
+        btn.textContent === 'Посмотреть ответы'
+            ? btn.textContent = 'Скрыть ответы'
+            : btn.textContent = 'Посмотреть ответы'
+    })
+}
+
+function collapsibleListener() {
+
+    const answerBoxes = document.querySelectorAll('.answers__box');
+    answerBoxes.forEach(elem => {
+        elem.addEventListener('click', function () {
+            const collapsed = this.nextElementSibling;
+            elem.classList.toggle('active');
+            collapsed.classList.toggle('collapsed')
+        })
     })
 }
 
 init();
-insertTableData()
+// insertTableData()
 

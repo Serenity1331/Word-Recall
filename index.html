@@ -17,9 +17,32 @@
 		<h1 class="title">РКИ. Тренировочное упражнение</h1>
 	</header>
 
-	<div class="container">
+	<div class="countrySelection">
 
-		<div class="countrySelection"></div>
+		<div class="countrySelection__title">
+			Выберите страны
+		</div>
+		<div class="rows-container">
+			<div class="column">
+				<li class="countryName chosen">Ukraine</li>
+				<li class="countryName chosen">Italy</li>
+				<li class="countryName chosen">Germany</li>
+			</div>
+			<div class="column">
+				<li class="countryName chosen">Russia</li>
+				<li class="countryName chosen">Korea</li>
+				<li class="countryName chosen">France</li>
+			</div>
+			<div class="column">
+				<li class="countryName chosen">USA</li>
+				<li class="countryName chosen">Japan</li>
+				<li class="countryName chosen">China</li>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="container">
 
 		<div class="container-inner">
 			<button class="start">Начать</button>
@@ -31,26 +54,119 @@
 
 	</div>
 
-	<div class="answers">
+	<button class="showAnswers">Посмотреть ответы</button>
 
-		<button class="answers__title">
-			Посмотреть ответы
-		</button>
+	<div class="answers__container">
+		<div>
+			<button class="answers__box">Ukraine</button>
+			<div class="answers__collapsed">
+				<div class="answer"><span class="yellowSpan">Страна</span> — Украина</div>
+				<div class="answer"><span class="yellowSpan">Язык</span> — украинский</div>
+				<div class="answer"><span class="yellowSpan">Люди</span> — украинцы</div>
+				<div class="answer"><span class="yellowSpan">Говорят</span> — по-украински</div>
+				<div class="answer"><span class="yellowSpan">Мужчина</span> — украинец</div>
+				<div class="answer"><span class="yellowSpan">Женщина</span> — украинка</div>
+			</div>
+		</div>
 
-		<table class="answers__table">
-			<thead>
-				<tr>
-					<th class="cell">Страна</th>
-					<th class="cell">Язык</th>
-					<th class="cell">Люди</th>
-					<th class="cell">Говорят</th>
-					<th class="cell">Мужчина</th>
-					<th class="cell">Женщина</th>
-				</tr>
-			</thead>
-		</table>
+		<div>
+			<button class="answers__box">Italy</button>
+			<div class="answers__collapsed">
+				<div class="answer"><span class="yellowSpan">Страна</span> — Италия</div>
+				<div class="answer"><span class="yellowSpan">Язык</span> — итальянский</div>
+				<div class="answer"><span class="yellowSpan">Люди</span> — итальянцы</div>
+				<div class="answer"><span class="yellowSpan">Говорят</span> — по-итальянски</div>
+				<div class="answer"><span class="yellowSpan">Мужчина</span> — итальянец</div>
+				<div class="answer"><span class="yellowSpan">Женщина</span> — итальянка</div>
+			</div>
+		</div>
 
+		<div>
+			<button class="answers__box">Germany</button>
+			<div class="answers__collapsed">
+				<div class="answer"><span class="yellowSpan">Страна</span> — Германия</div>
+				<div class="answer"><span class="yellowSpan">Язык</span> — немецкий</div>
+				<div class="answer"><span class="yellowSpan">Люди</span> — немцы</div>
+				<div class="answer"><span class="yellowSpan">Говорят</span> — по-немецки</div>
+				<div class="answer"><span class="yellowSpan">Мужчина</span> — немец</div>
+				<div class="answer"><span class="yellowSpan">Женщина</span> — немка</div>
+			</div>
+		</div>
+
+		<div>
+			<button class="answers__box">Russia</button>
+			<div class="answers__collapsed">
+				<div class="answer"><span class="yellowSpan">Страна</span> — Россия</div>
+				<div class="answer"><span class="yellowSpan">Язык</span> — русский</div>
+				<div class="answer"><span class="yellowSpan">Люди</span> — русские</div>
+				<div class="answer"><span class="yellowSpan">Говорят</span> — по-русски</div>
+				<div class="answer"><span class="yellowSpan">Мужчина</span> — русский</div>
+				<div class="answer"><span class="yellowSpan">Женщина</span> — русская</div>
+			</div>
+		</div>
+
+		<div>
+			<button class="answers__box">Korea</button>
+			<div class="answers__collapsed">
+				<div class="answer"><span class="yellowSpan">Страна</span> — Корея</div>
+				<div class="answer"><span class="yellowSpan">Язык</span> — корейский</div>
+				<div class="answer"><span class="yellowSpan">Люди</span> — корейцы</div>
+				<div class="answer"><span class="yellowSpan">Говорят</span> — по-корейски</div>
+				<div class="answer"><span class="yellowSpan">Мужчина</span> — кореец</div>
+				<div class="answer"><span class="yellowSpan">Женщина</span> — кореянка</div>
+			</div>
+		</div>
+
+		<div>
+			<button class="answers__box">France</button>
+			<div class="answers__collapsed">
+				<div class="answer"><span class="yellowSpan">Страна</span> — Франция</div>
+				<div class="answer"><span class="yellowSpan">Язык</span> — французский</div>
+				<div class="answer"><span class="yellowSpan">Люди</span> — французы</div>
+				<div class="answer"><span class="yellowSpan">Говорят</span> — по-французски</div>
+				<div class="answer"><span class="yellowSpan">Мужчина</span> — француз</div>
+				<div class="answer"><span class="yellowSpan">Женщина</span> — француженка</div>
+			</div>
+		</div>
+
+		<div>
+			<button class="answers__box">USA</button>
+			<div class="answers__collapsed">
+				<div class="answer"><span class="yellowSpan">Страна</span> — Америка</div>
+				<div class="answer"><span class="yellowSpan">Язык</span> — английский</div>
+				<div class="answer"><span class="yellowSpan">Люди</span> — американцы</div>
+				<div class="answer"><span class="yellowSpan">Говорят</span> — по-английски</div>
+				<div class="answer"><span class="yellowSpan">Мужчина</span> — американец</div>
+				<div class="answer"><span class="yellowSpan">Женщина</span> — американка</div>
+			</div>
+		</div>
+
+		<div>
+			<button class="answers__box">Japan</button>
+			<div class="answers__collapsed">
+				<div class="answer"><span class="yellowSpan">Страна</span> — Япония</div>
+				<div class="answer"><span class="yellowSpan">Язык</span> — японский</div>
+				<div class="answer"><span class="yellowSpan">Люди</span> — японцы</div>
+				<div class="answer"><span class="yellowSpan">Говорят</span> — по-японски</div>
+				<div class="answer"><span class="yellowSpan">Мужчина</span> — японец</div>
+				<div class="answer"><span class="yellowSpan">Женщина</span> — японка</div>
+			</div>
+		</div>
+
+		<div>
+			<button class="answers__box">China</button>
+			<div class="answers__collapsed">
+				<div class="answer"><span class="yellowSpan">Страна</span> — Китай</div>
+				<div class="answer"><span class="yellowSpan">Язык</span> — китайский</div>
+				<div class="answer"><span class="yellowSpan">Люди</span> — китайцы</div>
+				<div class="answer"><span class="yellowSpan">Говорят</span> — по-китайски</div>
+				<div class="answer"><span class="yellowSpan">Мужчина</span> — китаец</div>
+				<div class="answer"><span class="yellowSpan">Женщина</span> — китаянка</div>
+			</div>
+		</div>
 	</div>
+
+
 
 	<script type="text/javascript" src="script.js"></script>
 </body>
